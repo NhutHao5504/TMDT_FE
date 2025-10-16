@@ -1,5 +1,5 @@
 // app/layout.tsx
-import Header from "../components/Header";
+import Header from "@/components/user/Header";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi">

@@ -59,7 +59,7 @@ Hệ thống bán thiết bị điện tử là một nền tảng thương mạ
 ### Các bước cài đặt
 
 1. **Clone dự án**
-   ```bash
+```bash
    git clone https://github.com/your-username/electronics-store.git
    cd electronics-store
 ```
