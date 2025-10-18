@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SWRProvider from "@/providers/SWRProvider";
+import { Theme } from "@radix-ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-        <SWRProvider>
-          {children}
+        <Theme
+          accentColor="orange" // Change the primary color
+          grayColor="mauve"
+          radius="large"
+          scale="medium"
+        >
+          <SWRProvider>
+            {children}
           </SWRProvider>
+        </Theme>
       </body>
     </html>
   );
