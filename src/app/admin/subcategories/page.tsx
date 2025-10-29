@@ -64,9 +64,10 @@ export default function SubcategoriesPage() {
 
   const handleCreate = async (payload: any) => {
     try {
+      // payload đã là FormData từ SubcategoryModal
       const res = await apiFetch(`${backendUrl}/subcategories`, {
         method: 'POST',
-        body: JSON.stringify(payload),
+        body: payload, // bỏ JSON.stringify
       })
       if (!res.ok) throw new Error(await res.text())
       toast.success('Tạo subcategory thành công')
@@ -80,9 +81,10 @@ export default function SubcategoriesPage() {
 
   const handleUpdate = async (id: string, payload: any) => {
     try {
+      // payload là FormData
       const res = await apiFetch(`${backendUrl}/subcategories/${id}`, {
         method: 'PATCH',
-        body: JSON.stringify(payload),
+        body: payload, // bỏ JSON.stringify
       })
       if (!res.ok) throw new Error(await res.text())
       toast.success('Cập nhật thành công')
@@ -94,6 +96,7 @@ export default function SubcategoriesPage() {
       toast.error(err?.message || 'Cập nhật thất bại')
     }
   }
+
 
   const handleDeactivate = async (id: string) => {
     try {
